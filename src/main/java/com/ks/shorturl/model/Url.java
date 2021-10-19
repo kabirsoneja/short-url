@@ -1,18 +1,16 @@
 package com.ks.shorturl.model;
 
-import java.time.LocalDateTime;
-
 public class Url {
 
     private String shortUrl;
     private String url;
-    private LocalDateTime createdAt;
+    private String timestamp;
 
 
-    public Url(String shortUrl, String longUrl, LocalDateTime createdAt) {
+    public Url(String shortUrl, String longUrl, String timestamp) {
         this.shortUrl = shortUrl;
         this.url = longUrl;
-        this.createdAt = createdAt;
+        this.timestamp = timestamp;
     }
 
     public Url(){
@@ -34,11 +32,11 @@ public class Url {
         this.url = url;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public String getTimestamp() {
+        return timestamp;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }
