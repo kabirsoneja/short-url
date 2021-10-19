@@ -2,8 +2,9 @@ package com.ks.shorturl.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ks.shorturl.model.Url;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -33,9 +34,12 @@ public class RedisConfig {
     @Autowired
     ObjectMapper mapper;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(RedisConfig.class);
+
 
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
+        LOGGER.info("Initializing Jedis Connection Factory");
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
         jedisConnectionFactory.setHostName(redisHost);
         jedisConnectionFactory.setPort(redisPort);
@@ -47,7 +51,7 @@ public class RedisConfig {
 
     @Bean
     public RedisTemplate<String, Url> redisTemplate() {
-
+        LOGGER.info("Initializing Redis Template");
         RedisTemplate<String, Url> redisTemplate = new RedisTemplate<>();
         Jackson2JsonRedisSerializer valueSerializer = new Jackson2JsonRedisSerializer(Url.class);
         valueSerializer.setObjectMapper(mapper);
@@ -59,6 +63,7 @@ public class RedisConfig {
 
     @Bean
     Jedis intializeJedisConnection(){
+        LOGGER.info("Initializing Jedis Connection");
         Jedis jedis = new Jedis(redisHost, redisPort);
         jedis.auth(redisPassword);
         return jedis;

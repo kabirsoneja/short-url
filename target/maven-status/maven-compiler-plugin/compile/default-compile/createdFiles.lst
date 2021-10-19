@@ -1,5 +1,6 @@
 com/ks/shorturl/controller/UrlController.class
-com/ks/shorturl/config/RedisProperties.class
+com/ks/shorturl/util/UrlAnalytics.class
+com/ks/shorturl/config/SpringFoxConfig.class
 com/ks/shorturl/config/RedisConfig.class
 com/ks/shorturl/ShortUrlApplication.class
 com/ks/shorturl/util/UrlHelper.class

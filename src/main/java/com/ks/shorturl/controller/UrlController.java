@@ -63,7 +63,7 @@ public class UrlController {
             urlAnalytics.initializeAnalytics(url);
             String longUrl = redisTemplate.opsForValue().get(url).getUrl();
             LOGGER.info("Long URL: "+ longUrl);
-            return ResponseEntity.ok(redisTemplate.opsForValue().get(url));
+            return ResponseEntity.ok(longUrl);
         }
         else{
             LOGGER.info("Short URL does not exist in the database");

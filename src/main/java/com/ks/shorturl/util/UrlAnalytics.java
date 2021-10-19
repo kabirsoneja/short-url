@@ -1,5 +1,8 @@
 package com.ks.shorturl.util;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
@@ -19,8 +22,11 @@ public class UrlAnalytics {
 
     Map<String, String> allTimeMap = new HashMap<>();
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(UrlAnalytics.class);
+
     public void initializeAnalytics(String shortUrl){
 
+        LOGGER.info("Initialize the analytics for short URL");
         if(!jedis.exists("day")){
             dayMap.put("0","0");
             jedis.hmset("day", dayMap);
@@ -44,6 +50,7 @@ public class UrlAnalytics {
 
     public void updateAnalytics(String shortUrl){
 
+        LOGGER.info("Updating the count for searched terms");
         if(jedis.hget("day", shortUrl) != null){
             Integer dayCount = Integer.parseInt(jedis.hget("day", shortUrl));
             dayCount += 1;
@@ -75,6 +82,8 @@ public class UrlAnalytics {
     }
 
     public String getResult(String shortUrl){
+
+        LOGGER.info("Generating results for analytics");
         Integer dayCount = 0;
         if(jedis.hget("day", shortUrl) != null){
             dayCount = Integer.parseInt(jedis.hget("day", shortUrl));
@@ -104,7 +113,8 @@ public class UrlAnalytics {
     }
 
     public String getTopSearch(){
-        int max = Integer.MIN_VALUE;
+        LOGGER.info("Finding the top searched term");
+        int max = 0;
         String url = "";
         Map<String, String> map = jedis.hgetAll("allTime");
         for(String key: map.keySet()){
