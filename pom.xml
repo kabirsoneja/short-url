@@ -47,6 +47,14 @@
             <version>23.0-rc1</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.13</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+
 
     </dependencies>
 

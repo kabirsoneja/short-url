@@ -4,29 +4,26 @@ import java.time.LocalDateTime;
 
 public class Url {
 
-    private String id;
+    private String shortUrl;
     private String url;
+    private LocalDateTime createdAt;
 
 
-
-    public Url(String id, String url, LocalDateTime created) {
-        this.id = id;
-        this.url = url;
-        this.created = created;
+    public Url(String shortUrl, String longUrl, LocalDateTime createdAt) {
+        this.shortUrl = shortUrl;
+        this.url = longUrl;
+        this.createdAt = createdAt;
     }
 
     public Url(){
-
     }
 
-    private LocalDateTime created;
-
-    public String getId() {
-        return id;
+    public String getShortUrl() {
+        return shortUrl;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setShortUrl(String shortUrl) {
+        this.shortUrl = shortUrl;
     }
 
     public String getUrl() {
@@ -37,11 +34,11 @@ public class Url {
         this.url = url;
     }
 
-    public LocalDateTime getCreated() {
-        return created;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated(LocalDateTime created) {
-        this.created = created;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
