@@ -4,8 +4,12 @@ SpringBoot URL Shortener with Redis
 
 ## Build and Run
 
+Prerequisites: Maven, Springboot, Java
+
 ```
-./makefile.sh
+mvn clean install
+mvn clean package
+mvn spring-boot:run
 ```
 This will start the application on localhost 8090. The port can be configured in application.properties
 
