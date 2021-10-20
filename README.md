@@ -2,6 +2,10 @@
 
 SpringBoot URL Shortener with Redis
 
+The application is deployed on Heroku and the Swagger UI for the API can be accessed using:
+
+``` https://short-url-1701.herokuapp.com/swagger-ui.html  ```
+
 ## Build and Run
 
 Prerequisites: Maven, Springboot, Java
@@ -11,6 +15,7 @@ mvn clean install
 mvn clean package
 mvn spring-boot:run
 ```
+
 This will start the application on localhost 8090. The port can be configured in application.properties
 
 ## Test
@@ -26,6 +31,8 @@ The Time to live for the each record in redis is defined as 600 seconds. It can 
 ## Swagger
 
 Swagger is integrated with the application for interacting with the API. The API documentation along with the information for all the end points can be viewed in Swagger.
+
+Swagger UI for deployed application: ``` https://short-url-1701.herokuapp.com/swagger-ui.html ```
 
 After starting the application, Swagger UI can be accessed through ``` http://localhost:8090/swagger-ui.html ```
 
