@@ -25,6 +25,8 @@ Swagger is integrated with the application for interacting with the API. The API
 
 After starting the application, Swagger UI can be accessed through ``` http://localhost:8090/swagger-ui.html ```
 
+<img width="1440" alt="Screen Shot 2021-10-19 at 10 24 55 PM" src="https://user-images.githubusercontent.com/59263423/138017694-0eee2bb9-a25e-468f-bfb6-0761acc1db44.png">
+
 ## API
 
 #### The application supports six endpoints:
