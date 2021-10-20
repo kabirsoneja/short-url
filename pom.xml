@@ -24,6 +24,51 @@
         </includes>
     </resource>
     </resources>
+
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.7.0</version>-->
+<!--                <configuration>-->
+<!--                    <source>1.8</source>-->
+<!--                    <target>1.8</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-shade-plugin</artifactId>-->
+<!--                <version>3.0.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>shade</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <minimizeJar>false</minimizeJar>-->
+<!--                            <transformers>-->
+<!--                                <transformer-->
+<!--                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
+<!--                                </transformer>-->
+<!--                            </transformers>-->
+<!--                            <finalName>LaunchInstance</finalName>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--&lt;!&ndash;            <plugin>&ndash;&gt;-->
+<!--&lt;!&ndash;                <artifactId>maven-surefire-plugin</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;                <version>2.21.0</version>&ndash;&gt;-->
+<!--&lt;!&ndash;                <dependencies>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <groupId>org.junit.platform</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <artifactId>junit-platform-surefire-provider</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <version>${junit.platform.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;                </dependencies>&ndash;&gt;-->
+<!--&lt;!&ndash;            </plugin>&ndash;&gt;-->
+
+<!--        </plugins>-->
     </build>
 
     <dependencies>
@@ -132,8 +177,6 @@
             <version>5.2.4.RELEASE</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
 
     <properties>

@@ -12,13 +12,14 @@ import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 
 import java.nio.charset.Charset;
+import java.util.concurrent.TimeUnit;
 
 
 @Component
 public class UrlHelper {
 
     @Value("${redis.ttl}")
-    public static long timeToLive = 20;
+    public static long timeToLive = 600;
 
     @Autowired
     Jedis jedis;
@@ -47,7 +48,7 @@ public class UrlHelper {
 
     public void persistData(Url url){
         LOGGER.info("Persisting Data in Redis");
-        redisTemplate.opsForValue().set(url.getShortUrl(), url);
+        redisTemplate.opsForValue().set(url.getShortUrl(), url, timeToLive, TimeUnit.SECONDS);
     }
 
 }
