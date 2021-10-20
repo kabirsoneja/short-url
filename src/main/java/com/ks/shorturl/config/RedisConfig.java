@@ -17,25 +17,16 @@ import redis.clients.jedis.Jedis;
 public class RedisConfig {
 
 
-    private static int redisPort = 18443;
-//    @Value("${spring.redis.port}")
-//    private static int redisPort;
+    private static final int redisPort = 18443;
 
+    private static final String redisHost = "redis-18443.c289.us-west-1-2.ec2.cloud.redislabs.com";
 
-    private static String redisHost = "redis-18443.c289.us-west-1-2.ec2.cloud.redislabs.com";
-//    @Value("${spring.redis.host}")
-//    private static String redisHost;
-
-
-    private static String redisPassword = "IGO7IqkSRDKZyL7n5XxmxwAtHsM29jwO";
-//    @Value("${spring.redis.password}")
-//    private static String redisPassword;
+    private static final String redisPassword = "IGO7IqkSRDKZyL7n5XxmxwAtHsM29jwO";
 
     @Autowired
     ObjectMapper mapper;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RedisConfig.class);
-
 
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
